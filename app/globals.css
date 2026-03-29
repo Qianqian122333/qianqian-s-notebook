@@ -45,7 +45,7 @@
   --sidebar-ring: oklch(0.708 0 0);
 
   /* 手写字体家族 */
-  --font-heading: "Caveat", cursive;
+  --font-heading: "Kalam", cursive;
   --font-body: "Kalam", cursive;
 }
 
@@ -144,21 +144,21 @@
   }
 
   h1 {
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     font-size: 3rem;
     font-weight: 700;
     line-height: 1.2;
   }
 
   h2 {
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     font-size: 2.5rem;
     font-weight: 600;
     line-height: 1.3;
   }
 
   h3 {
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     font-size: 2rem;
     font-weight: 600;
     line-height: 1.4;

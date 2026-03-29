@@ -1,12 +1,57 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { ArrowRight, Sparkles, Heart, Palette } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Heart, Palette } from "lucide-react";
 
 export default function Home() {
+  const waveRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    async function init() {
+      try {
+        const mod = await import("gsap");
+        const gsap = mod.default || mod;
+
+        if (waveRef.current) {
+          const words = waveRef.current.querySelectorAll(".wave-word");
+
+          // Word-by-word entrance, then stay
+          gsap.fromTo(
+            words,
+            { y: 20, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.5,
+              stagger: 0.12,
+              ease: "back.out(1.7)",
+            },
+          );
+        }
+      } catch {
+        // If GSAP fails, make words visible
+        if (waveRef.current) {
+          const words =
+            waveRef.current.querySelectorAll<HTMLElement>(".wave-word");
+          words.forEach((w) => (w.style.opacity = "1"));
+        }
+      }
+    }
+
+    init();
+  }, []);
+
+  const heroWords = "Hey, I'm a UX Designer and a Front-end Developer!".split(
+    " ",
+  );
+
   return (
     <div className="relative">
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-        {/* 背景装饰 */}
+        {/* Background decorations */}
         <div className="absolute inset-0 opacity-20">
           <div
             className="absolute top-20 left-10 w-32 h-32 border-4 border-primary rounded-full"
@@ -24,21 +69,31 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* 左侧文字内容 */}
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            {/* Left text content */}
             <div className="space-y-6">
               <div className="inline-block">
                 <div className="flex items-center gap-2 text-secondary mb-4">
-                  <Sparkles className="w-5 h-5" />
-                  <span style={{ fontFamily: "var(--font-body)" }}>
-                    Welcome to my world
+                  <span
+                    className="text-xl"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
+                    ✨ Welcome to my notebook
                   </span>
                 </div>
               </div>
 
-              <h1 className="text-primary relative inline-block">
-                Hey, I&apos;m a UX Designer!
+              <h1 ref={waveRef} className="text-primary relative">
+                {heroWords.map((word, i) => (
+                  <span
+                    key={i}
+                    className="wave-word inline-block mr-[0.3em]"
+                    style={{ opacity: 0 }}
+                  >
+                    {word}
+                  </span>
+                ))}
                 <div
                   className="absolute -bottom-2 left-0 w-full h-2 bg-primary/20"
                   style={{
@@ -54,10 +109,29 @@ export default function Home() {
                 transform complex challenges into intuitive designs.
               </p>
 
+              {/* Mobile hero image – between text and buttons */}
+              <div className="block lg:hidden">
+                <div
+                  className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]"
+                  style={{ transform: "rotate(2deg)" }}
+                >
+                  <Image
+                    src="/home/home-hero.webp"
+                    alt="Qianqian Wei"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 border-4 border-white/30 rounded-2xl pointer-events-none" />
+                </div>
+                <div className="flex gap-3 justify-center mt-4"></div>
+              </div>
+
               <div className="flex flex-wrap gap-4 pt-4">
                 <Link
                   href="/projects"
-                  className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg hover:bg-secondary transition-all shadow-lg hover:shadow-xl"
+                  className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg hover:bg-secondary hover:-translate-y-1 transition-all shadow-lg hover:shadow-xl"
                   style={{
                     fontFamily: "var(--font-body)",
                     transform: "rotate(-1deg)",
@@ -69,7 +143,7 @@ export default function Home() {
 
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 bg-card border-2 border-primary text-primary px-8 py-4 rounded-lg hover:bg-accent transition-all"
+                  className="inline-flex items-center gap-2 bg-card border-2 border-primary text-primary px-8 py-4 rounded-lg hover:bg-accent hover:-translate-y-1 hover:shadow-md transition-all"
                   style={{
                     fontFamily: "var(--font-body)",
                     transform: "rotate(1deg)",
@@ -80,7 +154,6 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* 手绘箭头装饰 */}
               <div className="pt-8 flex items-center gap-3 text-muted-foreground">
                 <div
                   className="w-16 h-0.5 bg-primary/40"
@@ -92,47 +165,22 @@ export default function Home() {
               </div>
             </div>
 
-            {/* 右侧插画装饰 */}
+            {/* Right – hero image (desktop only) */}
             <div className="relative hidden lg:block">
-              <div className="relative">
-                <div
-                  className="relative rounded-2xl overflow-hidden shadow-2xl bg-accent/50 aspect-square flex items-center justify-center"
-                  style={{ transform: "rotate(2deg)" }}
-                >
-                  <div className="text-center space-y-4 p-12">
-                    <div className="text-8xl">🎨</div>
-                    <p
-                      className="text-2xl text-primary"
-                      style={{ fontFamily: "var(--font-heading)" }}
-                    >
-                      Design with Heart
-                    </p>
-                    {/* 手绘波浪装饰 */}
-                    <svg
-                      className="w-48 h-6 mx-auto text-primary/30"
-                      viewBox="0 0 200 24"
-                    >
-                      <path
-                        d="M0 12 Q25 2, 50 12 Q75 22, 100 12 Q125 2, 150 12 Q175 22, 200 12"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      />
-                    </svg>
-                  </div>
-
+              <div
+                className="relative cursor-pointer transition-transform duration-500 ease-out hover:rotate-2"
+                style={{ transform: "rotate(2deg)" }}
+              >
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[3/4] max-w-[380px] ml-auto">
+                  <Image
+                    src="/home/home-hero.webp"
+                    alt="Qianqian Wei"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                    priority
+                  />
                   <div className="absolute inset-0 border-4 border-white/50 rounded-2xl pointer-events-none" />
-                </div>
-
-                {/* 装饰标签 */}
-                <div className="absolute -top-4 -right-4 bg-secondary text-secondary-foreground px-6 py-3 rounded-full shadow-lg transform rotate-12">
-                  <span style={{ fontFamily: "var(--font-body)" }}>UX/UI</span>
-                </div>
-
-                <div className="absolute -bottom-4 -left-4 bg-primary text-primary-foreground px-6 py-3 rounded-full shadow-lg transform -rotate-6">
-                  <span style={{ fontFamily: "var(--font-body)" }}>
-                    Designer
-                  </span>
                 </div>
               </div>
             </div>
@@ -140,7 +188,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Quick Intro Section */}
+      {/* What I Do Section */}
       <section className="py-20 bg-card/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -163,16 +211,16 @@ export default function Home() {
                 icon: "🔍",
               },
               {
-                title: "Interface Design",
+                title: "UX | UI Design",
                 description:
-                  "Creating beautiful, intuitive interfaces that delight users and solve real problems.",
+                  "Creating beautiful, intuitive interfaces that delight users and solve real problems through user-centered design.",
                 icon: "🎨",
               },
               {
-                title: "Prototyping",
+                title: "Front-end / Full-stack Development",
                 description:
-                  "Building interactive prototypes to validate ideas and iterate quickly based on feedback.",
-                icon: "✨",
+                  "Building responsive, accessible web applications with modern frameworks and bringing designs to life with code.",
+                icon: "💻",
               },
             ].map((service, index) => (
               <div

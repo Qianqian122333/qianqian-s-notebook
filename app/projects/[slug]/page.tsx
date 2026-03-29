@@ -43,7 +43,7 @@ export default async function ProjectDetailPage({
               className="text-sm text-secondary"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              {project.category}
+              {project.categories.join(" · ")}
             </span>
             <div className="w-8 h-0.5 bg-primary/40" />
           </div>

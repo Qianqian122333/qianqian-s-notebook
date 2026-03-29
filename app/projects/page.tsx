@@ -3,17 +3,65 @@
 import { useState } from "react";
 import { Star, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { projects } from "@/lib/projects";
+
+function ImageWithFallback({
+  src,
+  alt,
+  fallbackEmoji,
+}: {
+  src: string;
+  alt: string;
+  fallbackEmoji: string;
+}) {
+  const [error, setError] = useState(false);
+
+  if (error) {
+    return (
+      <div className="absolute inset-0 flex items-center justify-center bg-accent/40">
+        <div className="text-center p-6">
+          <div className="text-6xl mb-3">{fallbackEmoji}</div>
+          <p
+            className="text-primary text-lg"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            {alt}
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      fill
+      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+      className="object-cover transition-transform duration-500 group-hover:scale-105"
+      onError={() => setError(true)}
+    />
+  );
+}
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const categories = ["All", "UX Design", "User Research"];
+  const categories = [
+    "All",
+    "UX Design",
+    "User Research",
+    "Front-end Development",
+    "Full-Stack Development",
+  ];
 
   const filteredProjects =
     selectedCategory === "All"
       ? projects
-      : projects.filter((project) => project.category === selectedCategory);
+      : projects.filter((project) =>
+          project.categories.includes(selectedCategory),
+        );
 
   return (
     <div className="relative">
@@ -29,13 +77,6 @@ export default function ProjectsPage() {
         />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-block mb-6">
-            <div className="flex items-center gap-2 text-secondary justify-center">
-              <Star className="w-5 h-5" />
-              <span style={{ fontFamily: "var(--font-body)" }}>Portfolio</span>
-            </div>
-          </div>
-
           <h1 className="text-primary mb-6 relative inline-block">
             My Projects
             <div
@@ -55,14 +96,14 @@ export default function ProjectsPage() {
       </section>
 
       {/* Filter Section */}
-      <section className="py-12 bg-card/50 sticky top-16 z-10 backdrop-blur-sm border-b-2 border-primary/10">
+      <section className="py-12 bg-card/50 border-b-2 border-primary/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-3">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 rounded-full transition-all shadow-sm ${
+                className={`cursor-pointer px-6 py-3 rounded-full transition-all shadow-sm hover:-translate-y-1 ${
                   selectedCategory === category
                     ? "bg-primary text-primary-foreground shadow-md scale-105"
                     : "bg-card border-2 border-primary/30 text-foreground hover:bg-accent"
@@ -95,19 +136,19 @@ export default function ProjectsPage() {
                   transform: `rotate(${index % 3 === 1 ? "0deg" : index % 2 === 0 ? "-1deg" : "1deg"})`,
                 }}
               >
-                {/* 项目封面 */}
-                <div className="relative overflow-hidden aspect-video bg-accent/40 flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <div className="text-6xl mb-3">
-                      {project.category === "UX Design" ? "🎨" : "🔍"}
-                    </div>
-                    <p
-                      className="text-primary text-lg"
-                      style={{ fontFamily: "var(--font-heading)" }}
-                    >
-                      {project.title}
-                    </p>
-                  </div>
+                {/* Project Cover */}
+                <div className="relative overflow-hidden aspect-video">
+                  <ImageWithFallback
+                    src={project.image}
+                    alt={project.title}
+                    fallbackEmoji={
+                      project.categories.includes("UX Design")
+                        ? "🎨"
+                        : project.categories.includes("User Research")
+                          ? "🔍"
+                          : "💻"
+                    }
+                  />
                   {project.featured && (
                     <div className="absolute top-4 right-4 bg-secondary text-secondary-foreground px-4 py-2 rounded-full shadow-lg transform rotate-6">
                       <div className="flex items-center gap-1">
@@ -127,7 +168,7 @@ export default function ProjectsPage() {
                       className="text-sm text-secondary"
                       style={{ fontFamily: "var(--font-body)" }}
                     >
-                      {project.category}
+                      {project.categories.join(" · ")}
                     </span>
                     <div className="w-8 h-0.5 bg-primary/40" />
                   </div>
@@ -230,7 +271,7 @@ export default function ProjectsPage() {
                   <div className="text-6xl mb-4">{step.emoji}</div>
                   <div
                     className="text-4xl text-primary mb-2"
-                    style={{ fontFamily: "var(--font-heading)" }}
+                    style={{ fontFamily: "var(--font-body)" }}
                   >
                     {step.number}
                   </div>
