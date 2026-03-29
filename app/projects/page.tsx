@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Star, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -47,13 +47,44 @@ function ImageWithFallback({
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const waveRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    async function init() {
+      try {
+        const mod = await import("gsap");
+        const gsap = mod.default || mod;
+        if (waveRef.current) {
+          const words = waveRef.current.querySelectorAll(".wave-word");
+          gsap.fromTo(
+            words,
+            { y: 20, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.5,
+              stagger: 0.12,
+              ease: "back.out(1.7)",
+            },
+          );
+        }
+      } catch {
+        if (waveRef.current) {
+          const words =
+            waveRef.current.querySelectorAll<HTMLElement>(".wave-word");
+          words.forEach((w) => (w.style.opacity = "1"));
+        }
+      }
+    }
+    init();
+  }, []);
 
   const categories = [
     "All",
     "UX Design",
-    "User Research",
     "Front-end Development",
     "Full-Stack Development",
+    "User Research",
   ];
 
   const filteredProjects =
@@ -77,8 +108,16 @@ export default function ProjectsPage() {
         />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-primary mb-6 relative inline-block">
-            My Projects
+          <h1 ref={waveRef} className="text-primary mb-6 relative inline-block">
+            {["My", "Projects"].map((word, i) => (
+              <span
+                key={i}
+                className="wave-word inline-block mr-[0.3em]"
+                style={{ opacity: 0 }}
+              >
+                {word}
+              </span>
+            ))}
             <div
               className="absolute -bottom-2 left-0 w-full h-2 bg-secondary/20"
               style={{
@@ -96,25 +135,19 @@ export default function ProjectsPage() {
       </section>
 
       {/* Filter Section */}
-      <section className="py-12 bg-card/50 border-b-2 border-primary/10">
+      <section className="py-12 bg-card/50 border-b-2 border-primary/10 sticky top-0 z-40 lg:static">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-3">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`cursor-pointer px-6 py-3 rounded-full transition-all shadow-sm hover:-translate-y-1 ${
+                className={`cursor-pointer px-6 py-3 rounded-full transition-colors shadow-sm ${
                   selectedCategory === category
-                    ? "bg-primary text-primary-foreground shadow-md scale-105"
+                    ? "bg-primary text-primary-foreground shadow-md"
                     : "bg-card border-2 border-primary/30 text-foreground hover:bg-accent"
                 }`}
-                style={{
-                  fontFamily: "var(--font-body)",
-                  transform:
-                    selectedCategory === category
-                      ? "rotate(-1deg)"
-                      : "rotate(0deg)",
-                }}
+                style={{ fontFamily: "var(--font-body)" }}
               >
                 {category}
               </button>
@@ -208,81 +241,6 @@ export default function ProjectsPage() {
               </p>
             </div>
           )}
-        </div>
-      </section>
-
-      {/* Design Process Section */}
-      <section className="py-20 bg-card/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-primary mb-4 relative inline-block">
-              My Design Process
-              <div
-                className="absolute -bottom-2 left-0 w-full h-2 bg-primary/20"
-                style={{ transform: "rotate(-1deg)" }}
-              />
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              {
-                number: "01",
-                title: "Research",
-                description:
-                  "Understanding users, competitors, and the problem space.",
-                emoji: "🔍",
-              },
-              {
-                number: "02",
-                title: "Ideate",
-                description:
-                  "Brainstorming solutions and sketching initial concepts.",
-                emoji: "💡",
-              },
-              {
-                number: "03",
-                title: "Design",
-                description:
-                  "Creating high-fidelity designs and interactive prototypes.",
-                emoji: "🎨",
-              },
-              {
-                number: "04",
-                title: "Test",
-                description:
-                  "Validating designs through user testing and iteration.",
-                emoji: "✅",
-              },
-            ].map((step, index) => (
-              <div key={index} className="relative text-center">
-                {index < 3 && (
-                  <div className="hidden md:block absolute top-12 left-1/2 w-full h-0.5 bg-primary/30 -z-10">
-                    <ArrowRight className="absolute right-0 -top-2 w-5 h-5 text-primary/50" />
-                  </div>
-                )}
-
-                <div
-                  className="bg-card p-8 rounded-2xl shadow-md border-2 border-primary/10 hover:shadow-xl transition-all"
-                  style={{
-                    transform: `rotate(${index % 2 === 0 ? "-1deg" : "1deg"})`,
-                  }}
-                >
-                  <div className="text-6xl mb-4">{step.emoji}</div>
-                  <div
-                    className="text-4xl text-primary mb-2"
-                    style={{ fontFamily: "var(--font-body)" }}
-                  >
-                    {step.number}
-                  </div>
-                  <h4 className="text-foreground mb-2">{step.title}</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

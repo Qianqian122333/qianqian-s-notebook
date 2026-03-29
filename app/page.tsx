@@ -3,10 +3,11 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Heart, Palette } from "lucide-react";
+import { ArrowRight, Heart, Palette, Volume2 } from "lucide-react";
 
 export default function Home() {
   const waveRef = useRef<HTMLHeadingElement>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     async function init() {
@@ -43,9 +44,8 @@ export default function Home() {
     init();
   }, []);
 
-  const heroWords = "Hey, I'm a UX Designer and a Front-end Developer!".split(
-    " ",
-  );
+  const heroPart1 = ["Hi,", "I", "am"];
+  const heroPart2 = ["A", "UX", "Designer", "and", "Front-end", "Developer."];
 
   return (
     <div className="relative">
@@ -84,10 +84,35 @@ export default function Home() {
                 </div>
               </div>
 
-              <h1 ref={waveRef} className="text-primary relative">
-                {heroWords.map((word, i) => (
+              {/* Hero h1 – wave animation on all screen sizes */}
+              <h1 ref={waveRef} className="text-primary relative block w-full">
+                {heroPart1.map((word, i) => (
                   <span
-                    key={i}
+                    key={`p1-${i}`}
+                    className="wave-word inline-block mr-[0.3em]"
+                    style={{ opacity: 0 }}
+                  >
+                    {word}
+                  </span>
+                ))}
+                <button
+                  type="button"
+                  className="wave-word inline-flex items-center justify-center mx-1 cursor-pointer hover:text-secondary transition-colors"
+                  style={{ opacity: 0, verticalAlign: "middle" }}
+                  onClick={() => audioRef.current?.play()}
+                  aria-label="Play pronunciation of Qianqian"
+                >
+                  <Volume2 className="w-6 h-6" />
+                </button>
+                <span
+                  className="wave-word inline-block mr-[0.3em]"
+                  style={{ opacity: 0 }}
+                >
+                  Qianqian.
+                </span>
+                {heroPart2.map((word, i) => (
+                  <span
+                    key={`p2-${i}`}
                     className="wave-word inline-block mr-[0.3em]"
                     style={{ opacity: 0 }}
                   >
@@ -102,6 +127,7 @@ export default function Home() {
                   }}
                 />
               </h1>
+              <audio ref={audioRef} src="/home/Qianqian.mp3" preload="auto" />
 
               <p className="text-xl text-muted-foreground leading-relaxed">
                 I create delightful digital experiences that put users first.

@@ -29,12 +29,14 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       {showIntro && <IntroOverlay onEnter={handleEnter} />}
-      <div className={showIntro ? "invisible" : "visible"}>
-        <Navbar />
-        <NotebookHoles />
-        <main className="flex-1 pl-8 md:pl-12">{children}</main>
-        <Footer />
-      </div>
+      {!showIntro && (
+        <div>
+          <Navbar />
+          <NotebookHoles />
+          <main className="flex-1 pl-8 md:pl-12">{children}</main>
+          <Footer />
+        </div>
+      )}
     </>
   );
 }

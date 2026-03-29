@@ -127,7 +127,7 @@ export function IntroOverlay({ onEnter }: { onEnter: () => void }) {
       {/* Notebook image – start invisible, GSAP animates in */}
       <div
         ref={notebookRef}
-        className="cursor-pointer mb-8 transition-transform duration-500 ease-out hover:rotate-2"
+        className="cursor-pointer mb-8 transition-all duration-500 ease-out hover:rotate-2"
         onClick={handleClick}
         style={{ transformStyle: "preserve-3d", opacity: 0 }}
       >

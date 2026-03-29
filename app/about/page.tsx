@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import Image from "next/image";
 import { Award, ArrowUpRight } from "lucide-react";
 
@@ -64,6 +64,37 @@ const funFacts = [
 
 export default function AboutPage() {
   const heroImageRef = useRef<HTMLDivElement>(null);
+  const waveRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    async function init() {
+      try {
+        const mod = await import("gsap");
+        const gsap = mod.default || mod;
+        if (waveRef.current) {
+          const words = waveRef.current.querySelectorAll(".wave-word");
+          gsap.fromTo(
+            words,
+            { y: 20, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.5,
+              stagger: 0.12,
+              ease: "back.out(1.7)",
+            },
+          );
+        }
+      } catch {
+        if (waveRef.current) {
+          const words =
+            waveRef.current.querySelectorAll<HTMLElement>(".wave-word");
+          words.forEach((w) => (w.style.opacity = "1"));
+        }
+      }
+    }
+    init();
+  }, []);
 
   return (
     <div className="relative">
@@ -100,8 +131,16 @@ export default function AboutPage() {
 
             {/* Right – content */}
             <div className="space-y-6 order-1 lg:order-2">
-              <h1 className="text-primary relative inline-block">
-                <span className="block">Nice to meet you!</span>
+              <h1 ref={waveRef} className="text-primary relative inline-block">
+                {["Nice", "to", "meet", "you!"].map((word, i) => (
+                  <span
+                    key={i}
+                    className="wave-word inline-block mr-[0.3em]"
+                    style={{ opacity: 0 }}
+                  >
+                    {word}
+                  </span>
+                ))}
                 <div
                   className="absolute -bottom-2 left-0 w-full h-2 bg-secondary/20"
                   style={{

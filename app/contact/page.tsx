@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Mail, MapPin, Send } from "lucide-react";
 
 export default function ContactPage() {
@@ -14,6 +14,37 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
+  const waveRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    async function init() {
+      try {
+        const mod = await import("gsap");
+        const gsap = mod.default || mod;
+        if (waveRef.current) {
+          const words = waveRef.current.querySelectorAll(".wave-word");
+          gsap.fromTo(
+            words,
+            { y: 20, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.5,
+              stagger: 0.12,
+              ease: "back.out(1.7)",
+            },
+          );
+        }
+      } catch {
+        if (waveRef.current) {
+          const words =
+            waveRef.current.querySelectorAll<HTMLElement>(".wave-word");
+          words.forEach((w) => (w.style.opacity = "1"));
+        }
+      }
+    }
+    init();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -69,8 +100,16 @@ export default function ContactPage() {
         />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-primary mb-6 relative inline-block">
-            <span className="block">Let&apos;s Connect!</span>
+          <h1 ref={waveRef} className="text-primary mb-6 relative inline-block">
+            {["Let's", "Connect!"].map((word, i) => (
+              <span
+                key={i}
+                className="wave-word inline-block mr-[0.3em]"
+                style={{ opacity: 0 }}
+              >
+                {word}
+              </span>
+            ))}
             <div
               className="absolute -bottom-2 left-0 w-full h-2 bg-secondary/20"
               style={{
@@ -260,7 +299,7 @@ export default function ContactPage() {
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        qianqianwei112233
+                        linkedin.com/in/qianqianwei112233
                       </a>
                     </div>
                   </div>
@@ -283,7 +322,7 @@ export default function ContactPage() {
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        Qianqian122333
+                        github.com/Qianqian122333
                       </a>
                     </div>
                   </div>
