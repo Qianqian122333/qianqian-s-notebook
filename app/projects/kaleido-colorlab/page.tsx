@@ -1615,7 +1615,7 @@ export default function KaleidoColorLabPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-10 py-5 rounded-lg hover:bg-secondary transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+              className="inline-flex items-center gap-2 bg-card border-2 border-primary/30 text-primary px-10 py-5 rounded-lg hover:bg-accent transition-all transform hover:-translate-y-1"
               style={{
                 fontFamily: "var(--font-body)",
               }}
@@ -1627,7 +1627,7 @@ export default function KaleidoColorLabPage() {
               href="https://gaahleri-color.cleme.store/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-card border-2 border-primary/30 text-primary px-10 py-5 rounded-lg hover:bg-accent transition-all transform hover:-translate-y-1"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-10 py-5 rounded-lg hover:bg-secondary transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
               style={{
                 fontFamily: "var(--font-body)",
               }}
