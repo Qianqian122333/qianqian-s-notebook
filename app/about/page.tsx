@@ -7,42 +7,46 @@ import { Award, ArrowUpRight } from "lucide-react";
 const experiences = [
   {
     year: "2025.08 - Present",
-    role: "UX Designer",
+    role: "UX Developer",
     company: "Gaahleri",
     link: "https://gaahleri.com",
-    description:
-      "Leading UX design for the Gaahleri e-commerce platform, creating seamless shopping experiences.",
+    logo: "/about/gaahleri.jpg",
+    // description:
+    //   "Leading UX design for the Gaahleri e-commerce platform, creating seamless shopping experiences.",
   },
   {
     year: "2025.07 - 2025.08",
-    role: "UX Researcher",
+    role: "UX Designer",
     company: "YoloLiv",
     link: "https://www.yololiv.com",
-    description:
-      "Conducted in-depth user research to uncover streaming creators' pain points and workflow optimization needs.",
+    logo: "/about/yololiv.jpeg",
+    // description:
+    //   "Conducted in-depth user research to uncover streaming creators' pain points and workflow optimization needs.",
   },
   {
     year: "2023.10 - 2025.06",
-    role: "UX/UI Designer",
-    company: "ATG - UV Printing & Packaging Solutions",
-    link: "https://www.atguvprinter.com",
-    description:
-      "Designed web and product interfaces for UV printing solutions, improving user workflows and business conversion.",
+    role: "UX Specialist",
+    company: "ATG",
+    link: "https://www.atgtickets.com/",
+    logo: "/about/atg.jpg",
+    // description:
+    //   "Designed web and product interfaces for UV printing solutions, improving user workflows and business conversion.",
   },
   {
     year: "2023.03 - 2023.10",
-    role: "UX/UI Designer",
+    role: "UX Designer",
     company: "Scope",
-    link: "https://scope.travel",
-    description:
-      "Designed intuitive travel platform experiences, focusing on user-centered mobile-first design.",
+    link: "https://www.scope.org.uk/",
+    logo: "/about/scope.jpeg",
+    // description:
+    //   "Designed intuitive travel platform experiences, focusing on user-centered mobile-first design.",
   },
 ];
 
 const funFacts = [
   {
     image: "/about/hanfu.webp",
-    title: "👘 Hanfu Enthusiast",
+    title: "🏮 Hanfu Enthusiast",
     description: "I love traditional Chinese clothing and cultural heritage.",
   },
   {
@@ -151,16 +155,21 @@ export default function AboutPage() {
               </h1>
 
               <p className="text-lg text-foreground leading-relaxed">
-                I&apos;m a passionate UX designer with experience creating
-                user-centered digital experiences. My journey started with a
-                love for art and psychology, which naturally led me to the world
-                of UX design and front-end development.
+                I live and breathe design—because to me, life itself is one
+                grand design.
               </p>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I believe great design is invisible – it just works. My approach
-                combines empathy, data, and creativity to solve complex problems
-                and create delightful experiences that users love.
+                By day, I&apos;m a UX designer and frontend developer, crafting
+                digital experiences that feel effortless, thoughtful, and human.
+                By heart, I&apos;m a hanfu (traditional Chinese clothing) model.
+              </p>
+
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Whether it&apos;s a user flow or a flowing sleeve, I believe
+                every detail tells a story. I design with empathy, curiosity,
+                and a little bit of magic—because the things we love should feel
+                as beautiful as they work.
               </p>
 
               <div className="flex flex-wrap gap-3 pt-4">
@@ -210,34 +219,64 @@ export default function AboutPage() {
             {experiences.map((exp, index) => (
               <div
                 key={index}
-                className={`relative bg-card p-8 rounded-2xl shadow-md border-2 border-primary/10 transition-transform duration-500 ease-out ${index % 2 === 0 ? "-rotate-[0.5deg] hover:rotate-2" : "rotate-[0.5deg] hover:-rotate-2"}`}
+                className={`relative bg-card p-6 md:p-8 rounded-3xl shadow-xl border-4 border-primary/20 backdrop-blur-sm transition-all duration-500 ease-out hover:shadow-2xl ${
+                  index % 2 === 0
+                    ? "-rotate-1 hover:rotate-1"
+                    : "rotate-1 hover:-rotate-1"
+                }`}
               >
-                <div className="absolute -left-4 top-8 w-8 h-8 bg-secondary rounded-full border-4 border-background shadow-md" />
+                {/* Cute Corner Tape */}
+                <div className="absolute -top-3 -right-3 w-12 h-6 bg-secondary/30 transform rotate-45 shadow-sm" />
 
-                <div className="pl-4">
-                  <div className="flex items-center gap-3 mb-2">
+                {/* Fun Icon Marker with Company Logo */}
+                <div className="absolute -left-8 top-6 w-16 h-16 bg-card rounded-full border-[3px] border-primary/20 shadow-xl overflow-hidden flex items-center justify-center transform transition-all group-hover:scale-110 group-hover:-rotate-3 z-10">
+                  <Image
+                    src={exp.logo}
+                    alt={`${exp.company} logo`}
+                    fill
+                    sizes="64px"
+                    className="object-cover"
+                  />
+                </div>
+
+                <div className="pl-6">
+                  {/* Time and Company Line */}
+                  <div className="flex flex-wrap items-center gap-3 mb-3 border-b-2 border-dashed border-primary/10 pb-3">
                     <span
-                      className="text-secondary"
+                      className="inline-block px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-bold"
                       style={{ fontFamily: "var(--font-body)" }}
                     >
                       {exp.year}
                     </span>
-                    <div className="w-12 h-0.5 bg-primary/40" />
+                    <span className="text-muted-foreground/50 hidden sm:inline">
+                      •
+                    </span>
+                    <a
+                      href={exp.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-primary hover:text-secondary font-bold transition-colors underline decoration-wavy decoration-primary/30 underline-offset-4"
+                      style={{ fontFamily: "var(--font-body)" }}
+                    >
+                      {exp.company}
+                      <ArrowUpRight className="w-4 h-4" />
+                    </a>
                   </div>
-                  <h3 className="text-foreground mb-1">{exp.role}</h3>
-                  <a
-                    href={exp.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-primary hover:text-secondary transition-colors underline underline-offset-2"
-                    style={{ fontFamily: "var(--font-body)" }}
+
+                  {/* Role */}
+                  <h3
+                    className="text-2xl text-foreground mb-2 mt-2"
+                    style={{ fontFamily: "var(--font-heading)" }}
                   >
-                    {exp.company}
-                    <ArrowUpRight className="w-4 h-4" />
-                  </a>
-                  <p className="text-muted-foreground leading-relaxed mt-3">
-                    {exp.description}
-                  </p>
+                    {exp.role}
+                  </h3>
+
+                  {/* Details (if any in future) */}
+                  {exp.description && (
+                    <p className="text-muted-foreground leading-relaxed mt-3 text-sm md:text-base">
+                      {exp.description}
+                    </p>
+                  )}
                 </div>
               </div>
             ))}

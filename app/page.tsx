@@ -130,9 +130,8 @@ export default function Home() {
               <audio ref={audioRef} src="/home/Qianqian.mp3" preload="auto" />
 
               <p className="text-xl text-muted-foreground leading-relaxed">
-                I create delightful digital experiences that put users first.
-                Through empathy, research, and creative problem-solving, I
-                transform complex challenges into intuitive designs.
+                3+ years in UX, expert in Figma, with skills in user research,
+                SaaS/B2B, e‑commerce, and responsive design & development.
               </p>
 
               {/* Mobile hero image – between text and buttons */}

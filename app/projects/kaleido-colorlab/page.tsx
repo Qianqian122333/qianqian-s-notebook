@@ -478,7 +478,7 @@ export default function KaleidoColorLabPage() {
                 className="text-foreground font-bold"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                UX/UI Designer
+                UX｜UI Designer
               </p>
               <p
                 className="text-foreground font-bold"
@@ -643,7 +643,10 @@ export default function KaleidoColorLabPage() {
                 KaleidoColor didn&apos;t meet expected sales.
               </li>
               <li className="text-lg text-muted-foreground leading-relaxed">
-                Stakeholders wanted to boost KaleidoColor&apos;s revenue.
+                Stakeholders wanted to{" "}
+                <span className="text-orange-500 font-bold">
+                  boost KaleidoColor&apos;s revenue.
+                </span>
               </li>
             </ul>
           </div>
@@ -771,13 +774,19 @@ export default function KaleidoColorLabPage() {
               </div>
               <div className="space-y-3 ml-11">
                 <p className="text-muted-foreground leading-relaxed">
-                  1. Users see a color in the real world but don&apos;t know how
-                  to replicate and mix it.
+                  1. Users see a color in the real world but
+                  <span className="text-orange-500 font-bold">
+                    {" "}
+                    don&apos;t know how to replicate and mix it
+                  </span>
+                  .
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  2. Users worry
-                  about wasting money on paints that won&apos;t produce the
-                  color they want.
+                  2. Users{" "}
+                  <span className="text-orange-500 font-bold">
+                    worry about wasting
+                  </span>{" "}
+                  money on paints that won&apos;t produce the color they want.
                 </p>
               </div>
             </div>
@@ -810,10 +819,12 @@ export default function KaleidoColorLabPage() {
                 User-Centered
               </span>
               <p className="text-lg text-foreground leading-relaxed font-bold">
-                <span className="text-primary">Problem Statement:</span>{" "}Users don&apos;t know which paint to buy.
+                <span className="text-primary">Problem Statement: </span> Users
+                don&apos;t know which paint to buy.
               </p>
               <p className="text-lg text-foreground leading-relaxed font-bold mt-2">
-                <span className="text-primary">Solution:</span> Build an app that helps users identify which colors they truly need.
+                <span className="text-primary">Solution:</span> Build an app
+                that helps users identify which colors they truly need.
               </p>
             </div>
           </div>
@@ -887,11 +898,16 @@ export default function KaleidoColorLabPage() {
                   />
                 </div>
                 <div className="p-6 text-center">
-                  <h4 className="text-primary mb-3">It&apos;s not difficult.</h4>
+                  <h4 className="text-primary mb-3">
+                    It&apos;s not difficult.
+                  </h4>
                   <p className="text-muted-foreground leading-relaxed">
-                    Color-mixing apps already exist on the market.
-                    The technology is proven — we&apos;re{" "}
-                    <span className="font-bold text-primary">not starting from zero</span>.
+                    Color-mixing apps already exist on the market. The
+                    technology is proven — we&apos;re{" "}
+                    <span className="font-bold text-primary">
+                      not starting from zero
+                    </span>
+                    .
                   </p>
                 </div>
               </div>
@@ -905,12 +921,18 @@ export default function KaleidoColorLabPage() {
                   />
                 </div>
                 <div className="p-6 text-center">
-                  <h4 className="text-primary mb-3">If we do, we lead the industry.</h4>
+                  <h4 className="text-primary mb-3">
+                    If we do, we lead the industry.
+                  </h4>
                   <p className="text-muted-foreground leading-relaxed">
-                    No competitor at our level has built something similar — this is a{" "}
+                    No competitor at our level has built something similar —
+                    this is a{" "}
                     <span className="font-bold text-primary">blue ocean</span>.
                     Being first means{" "}
-                    <span className="font-bold text-primary">industry leadership</span>.
+                    <span className="font-bold text-primary">
+                      industry leadership
+                    </span>
+                    .
                   </p>
                 </div>
               </div>
@@ -921,12 +943,17 @@ export default function KaleidoColorLabPage() {
           <div className="mb-12">
             <div className="flex items-start gap-3 mb-4">
               <span className="text-2xl shrink-0">💻</span>
-              <h3 className="text-primary">My Solution 2: I can quickly code the core features.</h3>
+              <h3 className="text-primary">
+                My Solution 2: I can quickly code the core features.
+              </h3>
             </div>
             <p className="text-lg text-muted-foreground leading-relaxed ml-10 mb-8">
-              I negotiated for 2 weeks to build a functional MVP with code.
-              Although it wouldn&apos;t be the final product, it would prove the
-              technical feasibility.
+              I negotiated for{" "}
+              <span className="text-orange-500 font-bold">
+                2 weeks to build a functional MVP with code
+              </span>
+              . Although it wouldn&apos;t be the final product, it would prove
+              the technical feasibility.
             </p>
 
             {/* Code image (1/3) + MVP video (2/3) */}
@@ -940,8 +967,14 @@ export default function KaleidoColorLabPage() {
                   playsInline
                   className="w-full h-full object-contain"
                 >
-                  <source src="/colorlab/colorlab-prototype.webm" type="video/webm" />
-                  <source src="/colorlab/colorlab-prototype.mp4" type="video/mp4" />
+                  <source
+                    src="/colorlab/colorlab-prototype.webm"
+                    type="video/webm"
+                  />
+                  <source
+                    src="/colorlab/colorlab-prototype.mp4"
+                    type="video/mp4"
+                  />
                 </video>
               </div>
               {/* Code screenshot — 1/3 */}
@@ -965,9 +998,12 @@ export default function KaleidoColorLabPage() {
               <span className="font-bold text-secondary">
                 🎯 The Turning Point:
               </span>{" "}
-              During the demo, I sampled the color of a dog and
-              generated a real-time mixing recipe on my phone. This tangible
-              functionality was more persuasive than any deck.
+              During the demo, I sampled the color of a dog and generated a
+              real-time mixing recipe on my phone.{" "}
+              <span className="text-orange-500 font-bold">
+                This tangible functionality was more persuasive than any deck
+              </span>
+              .
             </p>
           </div>
 
@@ -981,8 +1017,13 @@ export default function KaleidoColorLabPage() {
             </span>
             <p className="text-lg text-foreground leading-relaxed font-bold">
               Through my MVP, stakeholders realized that{" "}
-              <span className="text-primary">designing and developing an app wasn&apos;t as difficult as they had imagined.</span>{" "}
-              <span className="text-primary">The project was officially greenlit at the company.</span>
+              <span className="text-primary">
+                designing and developing an app wasn&apos;t as difficult as they
+                had imagined.
+              </span>{" "}
+              <span className="text-primary">
+                The project was officially greenlit at the company.
+              </span>
             </p>
           </div>
         </div>
@@ -1008,8 +1049,15 @@ export default function KaleidoColorLabPage() {
               <h3 className="text-primary">User Video Testing</h3>
             </div>
             <p className="text-lg text-muted-foreground leading-relaxed ml-10 mb-4">
-              Before prioritizing the project, we released a &apos;Let&apos;s Talk&apos; video
-              to test users&apos; feedback for a color mixer.
+              Before prioritizing the project, we released a{" "}
+              <span className="text-orange-500 font-bold">
+                &apos;Let&apos;s Talk&apos; video
+              </span>{" "}
+              to{" "}
+              <span className="text-orange-500 font-bold">
+                test users&apos; feedback
+              </span>{" "}
+              for a color mixer.
             </p>
             <div className="ml-10">
               <div className="relative w-full aspect-video rounded-2xl overflow-hidden">
@@ -1025,7 +1073,7 @@ export default function KaleidoColorLabPage() {
                 className="mt-3 text-center text-sm text-muted-foreground"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                Watch the Video
+                Watch the Video (from 5:40)
               </p>
             </div>
           </div>
@@ -1044,7 +1092,9 @@ export default function KaleidoColorLabPage() {
               className="font-bold text-foreground mb-6 text-center"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              Users are excited about the upcoming Color Mixer app
+              <span className="text-orange-500 font-bold">
+                Users are excited about the upcoming Color Mixer app
+              </span>
             </h4>
             <div className="grid gap-6 md:grid-cols-3">
               {[
@@ -1081,7 +1131,10 @@ export default function KaleidoColorLabPage() {
               Outcome
             </span>
             <p className="text-lg text-foreground leading-relaxed font-bold">
-              <span className="text-primary font-bold">ColorLab was officially upgraded to the company&apos;s Top 1 Priority project.</span>
+              <span className="text-primary font-bold">
+                ColorLab was officially upgraded to the company&apos;s Top 1
+                Priority project.
+              </span>
             </p>
           </div>
         </div>
@@ -1142,8 +1195,14 @@ export default function KaleidoColorLabPage() {
                       playsInline
                       className="w-full aspect-[9/16] object-cover"
                     >
-                      <source src="/colorlab/colorlab-picker.webm" type="video/webm" />
-                      <source src="/colorlab/colorlab-picker.mp4" type="video/mp4" />
+                      <source
+                        src="/colorlab/colorlab-picker.webm"
+                        type="video/webm"
+                      />
+                      <source
+                        src="/colorlab/colorlab-picker.mp4"
+                        type="video/mp4"
+                      />
                     </video>
                   </div>
                 </div>
@@ -1155,14 +1214,17 @@ export default function KaleidoColorLabPage() {
                 </p>
               </div>
               <div className="w-full space-y-6 md:w-1/2">
-                <h3 className="text-primary">Feature 1 · Image Color Picker：From Pain Point to Profit</h3>
+                <h3 className="text-primary">
+                  Feature 1 · Image Color Picker：From Pain Point to Profit
+                </h3>
                 <p className="text-muted-foreground leading-relaxed">
                   <span className="font-bold text-primary">Pain Point:</span>{" "}
                   Real-world inspiration doesn&apos;t map to our product.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   <span className="font-bold text-primary">Solution:</span>{" "}
-                  Instant color extraction that recommends the closest matching paint or a custom mixing recipe.
+                  Instant color extraction that recommends the closest matching
+                  paint or a custom mixing recipe.
                 </p>
               </div>
             </div>
@@ -1179,8 +1241,14 @@ export default function KaleidoColorLabPage() {
                       playsInline
                       className="w-full aspect-[9/16] object-cover"
                     >
-                      <source src="/colorlab/colorlab-colormix.webm" type="video/webm" />
-                      <source src="/colorlab/colorlab-colormix.mp4" type="video/mp4" />
+                      <source
+                        src="/colorlab/colorlab-colormix.webm"
+                        type="video/webm"
+                      />
+                      <source
+                        src="/colorlab/colorlab-colormix.mp4"
+                        type="video/mp4"
+                      />
                     </video>
                   </div>
                 </div>
@@ -1192,7 +1260,9 @@ export default function KaleidoColorLabPage() {
                 </p>
               </div>
               <div className="w-full space-y-6 md:w-1/2">
-                <h3 className="text-primary">Feature 2 · Digital Color Lab：From Fear to Fearless</h3>
+                <h3 className="text-primary">
+                  Feature 2 · Digital Color Lab：From Fear to Fearless
+                </h3>
                 <p className="text-muted-foreground leading-relaxed">
                   <span className="font-bold text-primary">Pain Point:</span>{" "}
                   Fear of wasting expensive material on failed mixing attempts.
@@ -1222,8 +1292,14 @@ export default function KaleidoColorLabPage() {
                     playsInline
                     className="w-full aspect-video object-cover"
                   >
-                    <source src="/colorlab/colorlab-dashboard.webm" type="video/webm" />
-                    <source src="/colorlab/colorlab-dashboard.mp4" type="video/mp4" />
+                    <source
+                      src="/colorlab/colorlab-dashboard.webm"
+                      type="video/webm"
+                    />
+                    <source
+                      src="/colorlab/colorlab-dashboard.mp4"
+                      type="video/mp4"
+                    />
                   </video>
                 </div>
                 <p
@@ -1234,7 +1310,9 @@ export default function KaleidoColorLabPage() {
                 </p>
               </div>
               <div className="w-full space-y-6 text-center">
-                <h3 className="text-primary">Feature 3 · Data-Driven Dashboard：From Blind to Bold</h3>
+                <h3 className="text-primary">
+                  Feature 3 · Data-Driven Dashboard：From Blind to Bold
+                </h3>
                 <p className="text-center text-muted-foreground leading-relaxed">
                   <span className="font-bold text-primary">Pain Point:</span>{" "}
                   Marketing lacked visibility into regional color trends.
@@ -1291,7 +1369,9 @@ export default function KaleidoColorLabPage() {
               <div className="w-full md:w-5/12 flex justify-center">
                 <div
                   className="relative w-full max-w-[220px] aspect-square rounded-2xl overflow-hidden cursor-zoom-in group"
-                  onClick={() => setZoomedImage("/colorlab/colorlab-memorymoment.webp")}
+                  onClick={() =>
+                    setZoomedImage("/colorlab/colorlab-memorymoment.webp")
+                  }
                 >
                   <Image
                     src="/colorlab/colorlab-memorymoment.webp"
@@ -1306,7 +1386,9 @@ export default function KaleidoColorLabPage() {
               </div>
               <div className="w-full md:w-7/12">
                 <div className="bg-card p-8 rounded-2xl shadow-md border-2 border-primary/10">
-                  <h4 className="text-primary mb-4">a hardware limitation we couldn&apos;t control.</h4>
+                  <h4 className="text-primary mb-4">
+                    a hardware limitation we couldn&apos;t control.
+                  </h4>
                   <p className="text-muted-foreground leading-relaxed text-lg">
                     Beta testers reported that screen color variance made
                     digital matching 100% accuracy impossible.
@@ -1331,8 +1413,14 @@ export default function KaleidoColorLabPage() {
                     playsInline
                     className="w-full aspect-video object-cover"
                   >
-                    <source src="/colorlab/colorlab-note.webm" type="video/webm" />
-                    <source src="/colorlab/colorlab-note.mp4" type="video/mp4" />
+                    <source
+                      src="/colorlab/colorlab-note.webm"
+                      type="video/webm"
+                    />
+                    <source
+                      src="/colorlab/colorlab-note.mp4"
+                      type="video/mp4"
+                    />
                   </video>
                 </div>
                 <p
@@ -1343,9 +1431,13 @@ export default function KaleidoColorLabPage() {
                 </p>
               </div>
               <div className="w-full space-y-6 text-center">
-                <h3 className="text-primary">Feature 4 · Color Note：From Flaw to Feature</h3>
+                <h3 className="text-primary">
+                  Feature 4 · Color Note：From Flaw to Feature
+                </h3>
                 <p className="text-center text-muted-foreground leading-relaxed">
-                  I designed a personal color note feature that lets users document real-world mixing ratios and techniques, turning a screen accuracy limitation into a user personal color library.
+                  I designed a personal color note feature that lets users
+                  document real-world mixing ratios and techniques, turning a
+                  screen accuracy limitation into a user personal color library.
                 </p>
               </div>
             </div>
@@ -1357,8 +1449,12 @@ export default function KaleidoColorLabPage() {
           THE IMPACT
           ═══════════════════════════════════════════════════════ */}
       <section className="w-full py-24 bg-primary/5 relative overflow-hidden">
-        <div className="absolute top-8 right-12 text-8xl text-primary/10 transform -rotate-12">★</div>
-        <div className="absolute bottom-8 left-12 text-6xl text-secondary/10 transform rotate-12">♥</div>
+        <div className="absolute top-8 right-12 text-8xl text-primary/10 transform -rotate-12">
+          ★
+        </div>
+        <div className="absolute bottom-8 left-12 text-6xl text-secondary/10 transform rotate-12">
+          ♥
+        </div>
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <p
@@ -1375,7 +1471,9 @@ export default function KaleidoColorLabPage() {
               />
             </h2>
             <p className="text-xl text-muted-foreground mt-6 max-w-3xl mx-auto leading-relaxed">
-              Bridging the gap between inspiration and product didn&apos;t just help users—it transformed the bottom line by removing friction from the purchasing journey.
+              Bridging the gap between inspiration and product didn&apos;t just
+              help users—it transformed the bottom line by removing friction
+              from the purchasing journey.
             </p>
           </div>
 
@@ -1411,8 +1509,12 @@ export default function KaleidoColorLabPage() {
                 >
                   {item.stat}
                 </div>
-                <div className="font-bold text-foreground text-lg">{item.label}</div>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.sub}</p>
+                <div className="font-bold text-foreground text-lg">
+                  {item.label}
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {item.sub}
+                </p>
               </div>
             ))}
           </div>
@@ -1464,13 +1566,15 @@ export default function KaleidoColorLabPage() {
                 title: "Business Acumen",
                 body: "It's not just about executing requirements — it's about aligning with stakeholders to ensure we're always investing in the right direction.",
               },
-                        ].map((item) => (
+            ].map((item) => (
               <div
                 key={item.title}
                 className="bg-card p-8 rounded-2xl shadow-md border-2 border-primary/10 transition-all hover:shadow-xl hover:-translate-y-2"
               >
                 <div className="text-4xl mb-4">{item.emoji}</div>
-                <h4 className="text-foreground mb-3 whitespace-nowrap">{item.title}</h4>
+                <h4 className="text-foreground mb-3 whitespace-nowrap">
+                  {item.title}
+                </h4>
                 <p className="text-muted-foreground leading-relaxed">
                   {item.body}
                 </p>

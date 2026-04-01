@@ -23,7 +23,7 @@ export const projects: Project[] = [
       "A color exploration tool that helps designers create harmonious color palettes with accessibility in mind.",
     tags: ["Figma", "Color Theory", "Accessibility"],
     featured: true,
-    image: "/projects/kaleido-colorlab.webp",
+    image: "/project/colorlab.webp",
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ export const projects: Project[] = [
       "E-commerce experience redesign for a boutique fashion brand, focusing on mobile-first shopping journey.",
     tags: ["E-commerce", "Mobile", "Prototyping"],
     featured: false,
-    image: "/projects/gaahleri-shop.webp",
+    image: "/project/aventus.webp",
   },
   {
     id: 3,
