@@ -1014,7 +1014,7 @@ export default function AventusAirbrushPage() {
               className="w-full h-auto rounded-2xl"
             />
             <div className="mt-4 ml-6 space-y-3">
-              <p className="text-lg text-foreground leading-relaxed font-medium">
+              <p className="text-lg text-muted-foreground leading-relaxed font-medium">
                 <span className="font-bold text-primary">Problem 1:</span> Users
                 can only see option images,{" "}
                 <span className="text-orange-500 font-bold">
@@ -1022,7 +1022,7 @@ export default function AventusAirbrushPage() {
                 </span>
                 .
               </p>
-              <p className="text-lg text-foreground leading-relaxed font-medium">
+              <p className="text-lg text-muted-foreground leading-relaxed font-medium">
                 <span className="font-bold text-primary">Problem 2:</span> The
                 Shopify plugin is{" "}
                 <span className="text-orange-500 font-bold">
@@ -1044,7 +1044,7 @@ export default function AventusAirbrushPage() {
 
           <div className="flex flex-col items-center gap-8 md:flex-row mb-8">
             <div className="w-full md:w-1/2">
-              <p className="text-lg text-foreground leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 I wrote CSS to resolve the Shopify plugin conflict.
               </p>
             </div>
@@ -1090,7 +1090,7 @@ export default function AventusAirbrushPage() {
               Purchase Page UI
             </p>
             <p
-              className="mt-4 text-lg text-foreground leading-relaxed font-medium text-center"
+              className="mt-4 text-lg text-muted-foreground leading-relaxed font-medium text-center"
               style={{ fontFamily: "var(--font-body)" }}
             >
               The redesigned UI allows users to see both option images and names

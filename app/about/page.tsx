@@ -4,7 +4,14 @@ import { useRef, useEffect } from "react";
 import Image from "next/image";
 import { Award, ArrowUpRight } from "lucide-react";
 
-const experiences = [
+const experiences: {
+  year: string;
+  role: string;
+  company: string;
+  link: string;
+  logo: string;
+  description?: string;
+}[] = [
   {
     year: "2025.08 - Present",
     role: "UX Developer",
