@@ -155,18 +155,6 @@ export default function Home() {
 
               <div className="flex flex-wrap gap-4 pt-4">
                 <Link
-                  href="/projects"
-                  className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg hover:bg-secondary hover:-translate-y-1 transition-all shadow-lg hover:shadow-xl"
-                  style={{
-                    fontFamily: "var(--font-body)",
-                    transform: "rotate(-1deg)",
-                  }}
-                >
-                  View My Work
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-
-                <Link
                   href="/contact"
                   className="inline-flex items-center gap-2 bg-card border-2 border-primary text-primary px-8 py-4 rounded-lg hover:bg-accent hover:-translate-y-1 hover:shadow-md transition-all"
                   style={{
@@ -176,6 +164,18 @@ export default function Home() {
                 >
                   Let&apos;s Chat
                   <Heart className="w-5 h-5" />
+                </Link>
+
+                <Link
+                  href="/projects"
+                  className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg hover:bg-secondary hover:-translate-y-1 transition-all shadow-lg hover:shadow-xl"
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    transform: "rotate(-1deg)",
+                  }}
+                >
+                  View My Work
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
 

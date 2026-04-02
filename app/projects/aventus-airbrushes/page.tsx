@@ -12,6 +12,19 @@ import {
   Users,
   Maximize2,
   X,
+  ClipboardList,
+  HelpCircle,
+  Search,
+  FolderOpen,
+  LayoutTemplate,
+  Target,
+  Wrench,
+  Palette,
+  Sparkles,
+  Code2,
+  Handshake,
+  Flag,
+  TrendingUp,
 } from "lucide-react";
 
 /* ─── Tech stack icons ─── */
@@ -344,13 +357,13 @@ export default function AventusAirbrushPage() {
                 Role
               </p>
               <p
-                className="text-foreground font-bold"
+                className="text-foreground"
                 style={{ fontFamily: "var(--font-body)" }}
               >
                 UX Designer
               </p>
               <p
-                className="text-foreground font-bold"
+                className="text-foreground"
                 style={{ fontFamily: "var(--font-body)" }}
               >
                 Front-end Developer
@@ -511,7 +524,7 @@ export default function AventusAirbrushPage() {
           {/* Task — plain text above market need image */}
           <div className="mb-6 mt-16">
             <div className="flex items-start gap-3 mb-3">
-              <span className="text-2xl shrink-0">📋</span>
+              <ClipboardList className="w-6 h-6 text-primary shrink-0 mt-0.5" />
               <h3 className="text-primary">Task</h3>
             </div>
           </div>
@@ -525,8 +538,8 @@ export default function AventusAirbrushPage() {
               height={675}
               className="w-full h-auto rounded-2xl"
             />
-            <p className="mt-4 text-foreground leading-relaxed">
-              Design an introduction page and a purchase page for Aventus
+            <p className="mt-4 text-foreground leading-relaxed text-center">
+              Design introduction pages and a purchase page for Aventus
               Airbrush.
             </p>
           </div>
@@ -534,7 +547,7 @@ export default function AventusAirbrushPage() {
           {/* Stakeholder's Needs */}
           <div className="mb-16">
             <div className="flex items-start gap-3 mb-6">
-              <span className="text-2xl shrink-0">🤔</span>
+              <Flag className="w-6 h-6 text-primary shrink-0 mt-0.5" />
               <h3 className="text-primary">Marketing Team&apos;s Needs</h3>
             </div>
 
@@ -611,7 +624,7 @@ export default function AventusAirbrushPage() {
           {/* My Findings */}
           <div className="mb-16">
             <div className="flex items-start gap-3 mb-6">
-              <span className="text-2xl shrink-0">🔍</span>
+              <Search className="w-6 h-6 text-primary shrink-0 mt-0.5" />
               <h3 className="text-primary">My Findings</h3>
             </div>
 
@@ -736,7 +749,7 @@ export default function AventusAirbrushPage() {
 
           {/* Sub-heading: I Restructured IA */}
           <div className="flex items-start gap-3 mb-6 mt-8">
-            <span className="text-2xl shrink-0">🗂️</span>
+            <FolderOpen className="w-6 h-6 text-primary shrink-0 mt-0.5" />
             <h3 className="text-primary m-0">
               Restructured IA for Scanability
             </h3>
@@ -760,6 +773,12 @@ export default function AventusAirbrushPage() {
                   <Maximize2 className="w-4 h-4 text-foreground" />
                 </div>
               </div>
+              <p
+                className="mt-3 text-center text-sm text-muted-foreground"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                Information Architecture
+              </p>
             </div>
             <div className="w-full md:w-1/2">
               <ul className="space-y-3 text-muted-foreground leading-relaxed">
@@ -810,7 +829,7 @@ export default function AventusAirbrushPage() {
 
           {/* Sub-heading: 2 Main Pages Final UI */}
           <div className="flex items-start gap-3 mb-6">
-            <span className="text-2xl shrink-0">🖼️</span>
+            <LayoutTemplate className="w-6 h-6 text-primary shrink-0 mt-0.5" />
             <h3 className="text-primary m-0">Final Main Pages’ UI</h3>
           </div>
 
@@ -828,13 +847,13 @@ export default function AventusAirbrushPage() {
                 <source src="/aventus/aventus-tailor.mp4" type="video/mp4" />
               </video>
             </div>
-            <div className="mt-6 flex flex-col items-center gap-4 text-center">
-              <p
-                className="text-xl text-foreground"
-                style={{ fontFamily: "var(--font-body)" }}
-              >
-                Tailor-Made Page
-              </p>
+            <p
+              className="mt-3 text-center text-sm text-muted-foreground"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              Tailor-Made Page
+            </p>
+            <div className="mt-3 flex flex-col items-center gap-4 text-center">
               <p
                 className="text-muted-foreground leading-relaxed max-w-xl"
                 style={{ fontFamily: "var(--font-body)" }}
@@ -871,13 +890,13 @@ export default function AventusAirbrushPage() {
                 <source src="/aventus/aventus-general.mp4" type="video/mp4" />
               </video>
             </div>
-            <div className="mt-6 flex flex-col items-center gap-4 text-center">
-              <p
-                className="text-xl text-foreground"
-                style={{ fontFamily: "var(--font-body)" }}
-              >
-                General Page
-              </p>
+            <p
+              className="mt-3 text-center text-sm text-muted-foreground"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              General Page
+            </p>
+            <div className="mt-3 flex flex-col items-center gap-4 text-center">
               <p
                 className="text-muted-foreground leading-relaxed max-w-xl"
                 style={{ fontFamily: "var(--font-body)" }}
@@ -992,7 +1011,7 @@ export default function AventusAirbrushPage() {
           {/* Shopify plugin section */}
           <div className="mt-10 mb-12">
             <div className="flex items-start gap-3 mb-4">
-              <span className="text-2xl shrink-0">🎯</span>
+              <Target className="w-6 h-6 text-primary shrink-0 mt-0.5" />
               <h3 className="text-primary">
                 Shopify plugin conflicted with our store
               </h3>
@@ -1013,6 +1032,12 @@ export default function AventusAirbrushPage() {
               height={675}
               className="w-full h-auto rounded-2xl"
             />
+            <p
+              className="mt-3 text-center text-sm text-muted-foreground"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              Plugin&apos;s Problem
+            </p>
             <div className="mt-4 ml-6 space-y-3">
               <p className="text-lg text-muted-foreground leading-relaxed font-medium">
                 <span className="font-bold text-primary">Problem 1:</span> Users
@@ -1035,7 +1060,7 @@ export default function AventusAirbrushPage() {
 
           {/* CSS Fix — heading + text + image */}
           <div className="flex items-start gap-3 mb-6">
-            <span className="text-2xl shrink-0">🛠️</span>
+            <Wrench className="w-6 h-6 text-primary shrink-0 mt-0.5" />
             <h3 className="text-primary m-0">
               Redesigned &amp; Developed the Purchase UI to Improve User
               Experience
@@ -1064,6 +1089,12 @@ export default function AventusAirbrushPage() {
                   <Maximize2 className="w-4 h-4 text-foreground" />
                 </div>
               </div>
+              <p
+                className="mt-3 text-center text-sm text-muted-foreground"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                My CSS
+              </p>
             </div>
           </div>
           {/* UI Update Video — full width */}
@@ -1111,7 +1142,7 @@ export default function AventusAirbrushPage() {
 
           {/* ── Brand Consistency ── */}
           <div className="flex items-start gap-3 mt-10 mb-6">
-            <span className="text-2xl shrink-0">🎨</span>
+            <Palette className="w-6 h-6 text-primary shrink-0 mt-0.5" />
             <h3 className="text-primary m-0">
               The plugin conflicted with our brand&apos;s black theme.
             </h3>
@@ -1167,7 +1198,7 @@ export default function AventusAirbrushPage() {
 
           {/* Brand Consistency heading + Video */}
           <div className="flex items-start gap-3 mb-6 mt-8">
-            <span className="text-2xl shrink-0">✨</span>
+            <Sparkles className="w-6 h-6 text-primary shrink-0 mt-0.5" />
             <h3 className="text-primary m-0">
               I Protected Brand Consistency Through Design
             </h3>
@@ -1259,6 +1290,14 @@ export default function AventusAirbrushPage() {
               height={675}
               className="w-full h-auto block"
             />
+            <div className="px-8 py-4 border-t border-primary/10 text-center">
+              <p
+                className="text-sm text-muted-foreground"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                Increased revenue
+              </p>
+            </div>
             <div className="px-8 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-primary/10">
               <div>
                 <div
@@ -1322,26 +1361,28 @@ export default function AventusAirbrushPage() {
           <div className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
             {[
               {
-                emoji: "🤝",
+                Icon: Handshake,
                 title: "Stakeholder Navigation",
                 body: "Good design isn't just about users — it's about aligning competing priorities. I turned an 11-point wish list into a focused, conversion-driven experience.",
               },
               {
-                emoji: "💻",
+                Icon: Code2,
                 title: "Code as a Design Tool",
                 body: "When the Shopify plugin broke our theme, writing custom CSS wasn't a workaround — it was the design decision that made the whole experience possible.",
               },
               {
-                emoji: "🎯",
+                Icon: Target,
                 title: "Constraints Breed Creativity",
                 body: "Technical and business constraints forced smarter solutions. The black-white alternating layout turned a visual clash into a brand-consistent feature.",
               },
             ].map((item) => (
               <div
                 key={item.title}
-                className="bg-card p-8 rounded-2xl shadow-md border-2 border-primary/10 transition-all hover:shadow-xl hover:-translate-y-2"
+                className="bg-card p-8 rounded-2xl shadow-md border-2 border-primary/10 transition-all hover:shadow-xl hover:-translate-y-2 text-center flex flex-col items-center"
               >
-                <div className="text-4xl mb-4">{item.emoji}</div>
+                <div className="mb-4">
+                  <item.Icon className="w-8 h-8 text-primary" />
+                </div>
                 <h4 className="text-foreground mb-3">{item.title}</h4>
                 <p className="text-muted-foreground leading-relaxed">
                   {item.body}

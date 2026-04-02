@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Star, ArrowRight } from "lucide-react";
+import { Star } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { projects } from "@/lib/projects";
@@ -19,7 +19,7 @@ function ImageWithFallback({
 
   if (error) {
     return (
-      <div className="absolute inset-0 flex items-center justify-center bg-accent/40">
+      <div className="w-full flex items-center justify-center bg-accent/40 min-h-[200px]">
         <div className="text-center p-6">
           <div className="text-6xl mb-3">{fallbackEmoji}</div>
           <p
@@ -37,9 +37,9 @@ function ImageWithFallback({
     <Image
       src={src}
       alt={alt}
-      fill
-      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-      className="object-cover transition-transform duration-500 group-hover:scale-105"
+      width={800}
+      height={600}
+      className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
       onError={() => setError(true)}
     />
   );
@@ -84,7 +84,6 @@ export default function ProjectsPage() {
     "UX Design",
     "Front-end Development",
     "Full-Stack Development",
-    "User Research",
   ];
 
   const filteredProjects =
@@ -170,17 +169,11 @@ export default function ProjectsPage() {
                 }}
               >
                 {/* Project Cover */}
-                <div className="relative overflow-hidden aspect-video">
+                <div className="relative overflow-hidden w-full">
                   <ImageWithFallback
                     src={project.image}
                     alt={project.title}
-                    fallbackEmoji={
-                      project.categories.includes("UX Design")
-                        ? "🎨"
-                        : project.categories.includes("User Research")
-                          ? "🔍"
-                          : "💻"
-                    }
+                    fallbackEmoji="🎨"
                   />
                   {project.featured && (
                     <div className="absolute top-4 right-4 bg-secondary text-secondary-foreground px-4 py-2 rounded-full shadow-lg transform rotate-6">
@@ -265,7 +258,6 @@ export default function ProjectsPage() {
             }}
           >
             Start a Project
-            <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
       </section>

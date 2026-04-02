@@ -5,6 +5,7 @@ export type Project = {
   categories: string[];
   description: string;
   tags: string[];
+  techIcons?: { icon: string; label: string }[];
   featured: boolean;
   image: string;
 };
@@ -20,31 +21,37 @@ export const projects: Project[] = [
       "Front-end Development",
     ],
     description:
-      "A color exploration tool that helps designers create harmonious color palettes with accessibility in mind.",
-    tags: ["Figma", "Color Theory", "Accessibility"],
+      "A color tool that bridges the gap between inspiration and purchase.",
+    tags: ["User Research", "Stakeholder Management", "Usability Test"],
+    techIcons: [
+      { icon: "/figma.svg", label: "Figma" },
+      { icon: "/html.svg", label: "HTML" },
+      { icon: "/css.svg", label: "CSS" },
+      { icon: "/tailwindcss.svg", label: "Tailwind" },
+      { icon: "/javascript.svg", label: "JS" },
+      { icon: "/typescript.svg", label: "TS" },
+      { icon: "/nextjs.png", label: "Next.js" },
+      { icon: "/sql.svg", label: "SQL" },
+    ],
     featured: true,
     image: "/project/colorlab.webp",
   },
   {
     id: 2,
-    slug: "gaahleri-shop",
-    title: "Gaahleri Shop",
+    slug: "aventus-airbrushes",
+    title: "Aventus AirBrushes",
     categories: ["UX Design", "Front-end Development"],
     description:
-      "E-commerce experience redesign for a boutique fashion brand, focusing on mobile-first shopping journey.",
-    tags: ["E-commerce", "Mobile", "Prototyping"],
+      "E-commerce experience design and development for Aventus Airbrush, focusing on the product page and customized purchase page.",
+    tags: ["E-commerce", "User Research", "Competitive Analysis"],
+    techIcons: [
+      { icon: "/figma.svg", label: "Figma" },
+      { icon: "/html.svg", label: "HTML" },
+      { icon: "/css.svg", label: "CSS" },
+      { icon: "/javascript.svg", label: "JS" },
+      { icon: "/shopify.svg", label: "Shopify" },
+    ],
     featured: false,
     image: "/project/aventus.webp",
-  },
-  {
-    id: 3,
-    slug: "yololiv-user-stories",
-    title: "YoloLiv User Stories",
-    categories: ["User Research"],
-    description:
-      "In-depth user research study uncovering streaming creators' pain points and workflow optimization needs.",
-    tags: ["Interviews", "Personas", "Journey Mapping"],
-    featured: false,
-    image: "/projects/yololiv-user-stories.webp",
   },
 ];

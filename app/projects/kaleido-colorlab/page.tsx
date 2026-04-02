@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   ArrowLeft,
-  ArrowRight,
   Play,
   Heart,
   ImageIcon,
@@ -15,6 +14,18 @@ import {
   Video,
   Maximize2,
   X,
+  FileText,
+  Star,
+  ThumbsUp,
+  Target,
+  HelpCircle,
+  Search,
+  HeartCrack,
+  Lightbulb,
+  BarChart2,
+  Code2,
+  Trophy,
+  Flag,
 } from "lucide-react";
 
 /* ─── Tech stack icons ─── */
@@ -58,8 +69,9 @@ const storyWords = [
 
 /* ─── Story heading 2 words ─── */
 const storyWords2 = [
-  "Final",
-  "version:",
+  "Beta",
+  "Test",
+  "Version:",
   "I",
   "designed",
   "and",
@@ -462,8 +474,16 @@ export default function KaleidoColorLabPage() {
         </div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          {/* Role / Duration / Collaboration — 3 columns, clean text only */}
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 mb-16 text-center">
+          {/* Bridge statement */}
+          <p
+            className="text-center text-4xl text-primary font-bold mb-16"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            I Built What I Design
+          </p>
+
+          {/* Role / Duration / Collaboration — 3 columns */}
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 mb-16 text-center">
             <div className="space-y-1">
               <div className="flex justify-center mb-3">
                 <User className="w-7 h-7 text-primary" />
@@ -475,13 +495,13 @@ export default function KaleidoColorLabPage() {
                 Role
               </p>
               <p
-                className="text-foreground font-bold"
+                className="text-foreground"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                UX｜UI Designer
+                UX Designer
               </p>
               <p
-                className="text-foreground font-bold"
+                className="text-foreground"
                 style={{ fontFamily: "var(--font-body)" }}
               >
                 Full-stack Developer
@@ -518,7 +538,7 @@ export default function KaleidoColorLabPage() {
                 className="text-foreground"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                Back-end Developer
+                Backend Developer
               </p>
               <p
                 className="text-foreground"
@@ -526,23 +546,11 @@ export default function KaleidoColorLabPage() {
               >
                 Marketing Team
               </p>
-              <p
-                className="text-foreground"
-                style={{ fontFamily: "var(--font-body)" }}
-              >
-                Product Team
-              </p>
             </div>
           </div>
 
           {/* Tech Stack */}
           <div className="text-center mb-12">
-            <p
-              className="text-primary font-bold text-2xl mb-8"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              I built what I design ✨
-            </p>
             <div className="flex flex-wrap items-center justify-center gap-8">
               {techStack.map((tech) => (
                 <div
@@ -576,7 +584,7 @@ export default function KaleidoColorLabPage() {
               className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg hover:bg-secondary transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              Explore Kaleido ColorLab ↗
+              Explore Kaleido ColorLab
             </a>
           </div>
         </div>
@@ -635,7 +643,7 @@ export default function KaleidoColorLabPage() {
           {/* Challenge */}
           <div className="mt-10 mb-16">
             <div className="flex items-start gap-3 mb-2">
-              <span className="text-2xl shrink-0">🎯</span>
+              <Target className="w-6 h-6 text-primary shrink-0 mt-0.5" />
               <h3 className="text-primary">The Challenge</h3>
             </div>
             <ul className="ml-10 mt-3 space-y-2 list-disc list-inside">
@@ -654,7 +662,7 @@ export default function KaleidoColorLabPage() {
           {/* Stakeholder's Needs — image + comparison */}
           <div className="mb-16">
             <div className="flex items-start gap-3 mb-6">
-              <span className="text-2xl shrink-0">🤔</span>
+              <Flag className="w-6 h-6 text-primary shrink-0 mt-0.5" />
               <h3 className="text-primary">Stakeholder&apos;s Needs</h3>
             </div>
 
@@ -663,8 +671,14 @@ export default function KaleidoColorLabPage() {
               alt="Stakeholder Hypothesis"
               width={1200}
               height={675}
-              className="w-full h-auto rounded-2xl mb-10"
+              className="w-full h-auto rounded-2xl mb-3"
             />
+            <p
+              className="text-center text-sm text-muted-foreground mb-10"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              Build a more detailed product website to boost revenue
+            </p>
 
             {/* Stakeholder vs My Thinking — side by side */}
             <div className="grid gap-8 md:grid-cols-2">
@@ -740,7 +754,7 @@ export default function KaleidoColorLabPage() {
           {/* My Findings: User Pain Points */}
           <div className="mb-10">
             <div className="flex items-start gap-3 mb-6">
-              <span className="text-2xl shrink-0">🔍</span>
+              <Search className="w-6 h-6 text-primary shrink-0 mt-0.5" />
               <h3 className="text-primary">My Findings: User Pain Points</h3>
             </div>
 
@@ -764,7 +778,7 @@ export default function KaleidoColorLabPage() {
             {/* User Pain Points summary */}
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-2xl">💔</span>
+                <HeartCrack className="w-6 h-6 text-primary shrink-0 mt-0.5" />
                 <h4
                   className="font-bold text-foreground text-lg"
                   style={{ fontFamily: "var(--font-body)" }}
@@ -775,7 +789,7 @@ export default function KaleidoColorLabPage() {
               <div className="space-y-3 ml-11">
                 <p className="text-muted-foreground leading-relaxed">
                   1. Users see a color in the real world but
-                  <span className="text-orange-500 font-bold">
+                  <span className="text-secondary font-bold">
                     {" "}
                     don&apos;t know how to replicate and mix it
                   </span>
@@ -783,7 +797,7 @@ export default function KaleidoColorLabPage() {
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   2. Users{" "}
-                  <span className="text-orange-500 font-bold">
+                  <span className="text-secondary font-bold">
                     worry about wasting
                   </span>{" "}
                   money on paints that won&apos;t produce the color they want.
@@ -795,7 +809,7 @@ export default function KaleidoColorLabPage() {
           {/* My Ideation */}
           <div>
             <div className="flex items-start gap-3 mb-6">
-              <span className="text-2xl shrink-0">💡</span>
+              <Lightbulb className="w-6 h-6 text-primary shrink-0 mt-0.5" />
               <h3 className="text-primary">My Ideation</h3>
             </div>
             <Image
@@ -882,7 +896,7 @@ export default function KaleidoColorLabPage() {
           {/* My Solution 1: Competitive Analysis */}
           <div className="mb-12">
             <div className="flex items-start gap-3 mb-6">
-              <span className="text-2xl shrink-0">📊</span>
+              <BarChart2 className="w-6 h-6 text-primary shrink-0 mt-0.5" />
               <h3 className="text-primary">
                 My Solution 1: Competitive Analysis
               </h3>
@@ -942,14 +956,14 @@ export default function KaleidoColorLabPage() {
           {/* My Solution 2: Code MVP */}
           <div className="mb-12">
             <div className="flex items-start gap-3 mb-4">
-              <span className="text-2xl shrink-0">💻</span>
+              <Code2 className="w-6 h-6 text-primary shrink-0 mt-0.5" />
               <h3 className="text-primary">
                 My Solution 2: I can quickly code the core features.
               </h3>
             </div>
             <p className="text-lg text-muted-foreground leading-relaxed ml-10 mb-8">
               I negotiated for{" "}
-              <span className="text-orange-500 font-bold">
+              <span className="text-secondary font-bold">
                 2 weeks to build a functional MVP with code
               </span>
               . Although it wouldn&apos;t be the final product, it would prove
@@ -958,33 +972,49 @@ export default function KaleidoColorLabPage() {
 
             {/* Code image (1/3) + MVP video (2/3) */}
             <div className="flex gap-4 mb-8 items-stretch">
-              {/* Video — 2/3 */}
-              <div className="relative flex-2 aspect-video rounded-2xl overflow-hidden bg-black">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-contain"
-                >
-                  <source
-                    src="/colorlab/colorlab-prototype.webm"
-                    type="video/webm"
-                  />
-                  <source
-                    src="/colorlab/colorlab-prototype.mp4"
-                    type="video/mp4"
-                  />
-                </video>
-              </div>
               {/* Code screenshot — 1/3 */}
-              <div className="relative flex-1 rounded-2xl overflow-hidden">
-                <Image
-                  src="/colorlab/colorlab-coding.webp"
-                  alt="Code Architecture Overview"
-                  fill
-                  className="object-cover"
-                />
+              <div className="flex flex-col flex-1 gap-2">
+                <div className="relative rounded-2xl overflow-hidden flex-1">
+                  <Image
+                    src="/colorlab/colorlab-coding.webp"
+                    alt="Code Architecture Overview"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <p
+                  className="text-center text-sm text-muted-foreground"
+                  style={{ fontFamily: "var(--font-body)" }}
+                >
+                  I can code
+                </p>
+              </div>
+              {/* Video — 2/3 */}
+              <div className="flex flex-col gap-2" style={{ flex: "2 2 0%" }}>
+                <div className="relative aspect-video rounded-2xl overflow-hidden bg-black flex-1">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-contain"
+                  >
+                    <source
+                      src="/colorlab/colorlab-prototype.webm"
+                      type="video/webm"
+                    />
+                    <source
+                      src="/colorlab/colorlab-prototype.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                </div>
+                <p
+                  className="text-center text-sm text-muted-foreground"
+                  style={{ fontFamily: "var(--font-body)" }}
+                >
+                  Build a MVP
+                </p>
               </div>
             </div>
           </div>
@@ -1000,7 +1030,7 @@ export default function KaleidoColorLabPage() {
               </span>{" "}
               During the demo, I sampled the color of a dog and generated a
               real-time mixing recipe on my phone.{" "}
-              <span className="text-orange-500 font-bold">
+              <span className="text-secondary font-bold">
                 This tangible functionality was more persuasive than any deck
               </span>
               .
@@ -1081,8 +1111,8 @@ export default function KaleidoColorLabPage() {
           {/* User's Positive Feedback heading */}
           <div className="mb-12">
             <div className="flex items-start gap-3 mb-4">
-              <span className="text-2xl shrink-0">🏆</span>
-              <h3 className="text-primary">User&apos;s Positive Feedback</h3>
+              <Trophy className="w-6 h-6 text-primary shrink-0 mt-0.5" />
+              <h3 className="text-primary">Users&apos; Positive Feedback</h3>
             </div>
           </div>
 
@@ -1120,6 +1150,12 @@ export default function KaleidoColorLabPage() {
                 </div>
               ))}
             </div>
+            <p
+              className="mt-3 text-center text-sm text-muted-foreground"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              Users&apos; Positive Feedback
+            </p>
           </div>
 
           {/* Outcome */}
@@ -1366,7 +1402,7 @@ export default function KaleidoColorLabPage() {
           <div className="space-y-16">
             {/* The Challenge */}
             <div className="flex flex-col items-center gap-12 md:flex-row">
-              <div className="w-full md:w-5/12 flex justify-center">
+              <div className="w-full md:w-5/12 flex flex-col items-center">
                 <div
                   className="relative w-full max-w-[220px] aspect-square rounded-2xl overflow-hidden cursor-zoom-in group"
                   onClick={() =>
@@ -1383,6 +1419,12 @@ export default function KaleidoColorLabPage() {
                     <Maximize2 className="w-4 h-4 text-foreground" />
                   </div>
                 </div>
+                <p
+                  className="mt-3 text-center text-sm text-muted-foreground"
+                  style={{ fontFamily: "var(--font-body)" }}
+                >
+                  User skepticism
+                </p>
               </div>
               <div className="w-full md:w-7/12">
                 <div className="bg-card p-8 rounded-2xl shadow-md border-2 border-primary/10">
@@ -1390,7 +1432,7 @@ export default function KaleidoColorLabPage() {
                     a hardware limitation we couldn&apos;t control.
                   </h4>
                   <p className="text-muted-foreground leading-relaxed text-lg">
-                    Beta testers reported that screen color variance made
+                    Video Testing reported that screen color variance made
                     digital matching 100% accuracy impossible.
                   </p>
                 </div>
@@ -1446,77 +1488,124 @@ export default function KaleidoColorLabPage() {
       </section>
 
       {/* ════════════════════════════════════════════════════════
-          THE IMPACT
+          BETA USABILITY TEST
           ═══════════════════════════════════════════════════════ */}
-      <section className="w-full py-24 bg-primary/5 relative overflow-hidden">
-        <div className="absolute top-8 right-12 text-8xl text-primary/10 transform -rotate-12">
-          ★
-        </div>
-        <div className="absolute bottom-8 left-12 text-6xl text-secondary/10 transform rotate-12">
-          ♥
-        </div>
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="usability-test" className="w-full py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <p
               className="text-sm uppercase tracking-wider text-secondary mb-4"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              ── Results ──
+              ── Beta Usability Test ──
             </p>
             <h2 className="text-primary mb-4 relative inline-block">
-              The Impact
+              Real Users. Real Feedback.
               <div
                 className="absolute -bottom-2 left-0 w-full h-1 bg-primary/30"
                 style={{ transform: "rotate(-1deg)" }}
               />
             </h2>
             <p className="text-xl text-muted-foreground mt-6 max-w-3xl mx-auto leading-relaxed">
-              Bridging the gap between inspiration and product didn&apos;t just
-              help users—it transformed the bottom line by removing friction
-              from the purchasing journey.
+              We invited real users to test the beta version and collected
+              structured feedback to validate our design decisions.
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          {/* Test images */}
+          <div className="grid gap-6 mb-14">
+            <div>
+              <div
+                className="relative group cursor-zoom-in rounded-2xl overflow-hidden border-2 border-primary/10"
+                onClick={() => setZoomedImage("/colorlab/test1.webp")}
+              >
+                <Image
+                  src="/colorlab/test1.webp"
+                  alt="Beta Usability Test 1"
+                  width={900}
+                  height={600}
+                  className="w-full h-auto"
+                />
+                <div className="absolute bottom-3 right-3 bg-white/85 backdrop-blur-sm rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity shadow-md">
+                  <Maximize2 className="w-4 h-4 text-foreground" />
+                </div>
+              </div>
+              <p
+                className="mt-3 text-center text-sm text-muted-foreground"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                Average rating (4.03)
+              </p>
+            </div>
+            <div>
+              <div
+                className="relative group cursor-zoom-in rounded-2xl overflow-hidden border-2 border-primary/10 bg-white"
+                onClick={() => setZoomedImage("/colorlab/test2.webp")}
+              >
+                <Image
+                  src="/colorlab/test2.webp"
+                  alt="Beta Usability Test 2"
+                  width={900}
+                  height={600}
+                  className="w-full h-auto"
+                />
+                <div className="absolute bottom-3 right-3 bg-white/85 backdrop-blur-sm rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity shadow-md">
+                  <Maximize2 className="w-4 h-4 text-foreground" />
+                </div>
+              </div>
+              <p
+                className="mt-3 text-center text-sm text-muted-foreground"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                77.3% of users rated the site easy to use
+              </p>
+            </div>
+          </div>
+
+          {/* Stats grid */}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-12">
             {[
+              { stat: "4,000+", label: "Participants", Icon: Users },
               {
-                stat: "+45%",
-                label: "Add-to-Cart Rate",
-                sub: "from digital mixing tool users",
-                emoji: "🛒",
+                stat: "66",
+                label: "Detailed Questionnaire Responses",
+                Icon: FileText,
               },
+              { stat: "4.03 / 5", label: "Average Rating", Icon: Star },
               {
-                stat: "2.5x",
-                label: "User Engagement",
-                sub: "average time spent exploring paints",
-                emoji: "⏱",
-              },
-              {
-                stat: "-30%",
-                label: "Checkout Hesitation",
-                sub: "drop in abandoned carts for verified colors",
-                emoji: "✅",
+                stat: "77.3%",
+                label: "Found the Website Easy to Use",
+                Icon: ThumbsUp,
               },
             ].map((item) => (
-              <div
-                key={item.label}
-                className="bg-card rounded-2xl border-2 border-primary/10 shadow-md p-8 text-center flex flex-col items-center gap-3 hover:shadow-xl transition-all hover:-translate-y-1"
-              >
-                <div className="text-3xl">{item.emoji}</div>
+              <div key={item.label} className="p-6 text-center">
+                <div className="flex justify-center mb-3">
+                  <item.Icon className="w-6 h-6 text-muted-foreground" />
+                </div>
                 <div
-                  className="text-5xl font-bold text-primary"
+                  className="text-4xl font-bold text-primary mb-2"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
                   {item.stat}
                 </div>
-                <div className="font-bold text-foreground text-lg">
-                  {item.label}
-                </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  {item.sub}
+                  {item.label}
                 </p>
               </div>
             ))}
+          </div>
+
+          {/* Report button */}
+          <div className="flex justify-center">
+            <a
+              href="/colorlab/Kaleido%20ColorLab%20Usability%20Test%20Analysis%20Report.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg hover:bg-secondary transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              View research summary (desensitized)
+            </a>
           </div>
         </div>
       </section>
@@ -1552,26 +1641,28 @@ export default function KaleidoColorLabPage() {
           <div className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
             {[
               {
-                emoji: "💻",
+                Icon: Code2,
                 title: "Coding Mindset",
                 body: "Great designers aren't limited by tools. Code is my medium; AI is my efficiency multiplier.",
               },
               {
-                emoji: "🎯",
+                Icon: Target,
                 title: "User-Centered",
                 body: "UX balances user needs with business viability. By uncovering real user needs, I created a new revenue engine.",
               },
               {
-                emoji: "📊",
+                Icon: BarChart2,
                 title: "Business Acumen",
                 body: "It's not just about executing requirements — it's about aligning with stakeholders to ensure we're always investing in the right direction.",
               },
             ].map((item) => (
               <div
                 key={item.title}
-                className="bg-card p-8 rounded-2xl shadow-md border-2 border-primary/10 transition-all hover:shadow-xl hover:-translate-y-2"
+                className="bg-card p-8 rounded-2xl shadow-md border-2 border-primary/10 transition-all hover:shadow-xl hover:-translate-y-2 text-center flex flex-col items-center"
               >
-                <div className="text-4xl mb-4">{item.emoji}</div>
+                <div className="mb-4">
+                  <item.Icon className="w-8 h-8 text-primary" />
+                </div>
                 <h4 className="text-foreground mb-3 whitespace-nowrap">
                   {item.title}
                 </h4>
@@ -1633,7 +1724,6 @@ export default function KaleidoColorLabPage() {
               }}
             >
               Explore ColorLab
-              <ArrowRight className="w-5 h-5" />
             </a>
           </div>
 
