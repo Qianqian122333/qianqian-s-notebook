@@ -262,7 +262,7 @@ export default function AventusAirbrushPage() {
           style={{ transform: "rotate(-15deg)" }}
         />
         <div className="absolute bottom-1/4 right-1/4 text-6xl text-secondary/10">
-          ♥
+          {"♥︎"}
         </div>
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -460,7 +460,7 @@ export default function AventusAirbrushPage() {
           ★
         </div>
         <div className="absolute bottom-8 left-12 text-6xl text-secondary/10 transform rotate-12">
-          ♥
+          {"♥︎"}
         </div>
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div
@@ -604,13 +604,13 @@ export default function AventusAirbrushPage() {
                 <h4 className="text-foreground mb-4">User Cognitive Load</h4>
                 <ul className="space-y-3 list-disc list-inside text-foreground leading-relaxed">
                   <li>
-                    <span className="font-bold text-secondary">
+                    <span className="font-bold text-orange-500">
                       My Question:
                     </span>{" "}
                     Information overload hides what&apos;s truly important.
                   </li>
                   <li>
-                    <span className="font-bold text-secondary">
+                    <span className="font-bold text-orange-500">
                       What I Wanted to Know:
                     </span>{" "}
                     Who are our users, what do they prioritize, and where do we
@@ -949,7 +949,7 @@ export default function AventusAirbrushPage() {
           ★
         </div>
         <div className="absolute bottom-8 left-12 text-6xl text-secondary/10 transform rotate-12">
-          ♥
+          {"♥︎"}
         </div>
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div
@@ -1262,7 +1262,7 @@ export default function AventusAirbrushPage() {
           ★
         </div>
         <div className="absolute bottom-8 left-12 text-6xl text-secondary/10 transform rotate-12">
-          ♥
+          {"♥︎"}
         </div>
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
@@ -1341,7 +1341,7 @@ export default function AventusAirbrushPage() {
           ★
         </div>
         <div className="absolute bottom-10 right-10 text-6xl text-primary/10">
-          ♥
+          {"♥︎"}
         </div>
 
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1403,7 +1403,7 @@ export default function AventusAirbrushPage() {
           ★
         </div>
         <div className="absolute bottom-10 left-10 text-6xl text-secondary/10 transform rotate-12">
-          ♥
+          {"♥︎"}
         </div>
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

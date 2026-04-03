@@ -399,7 +399,7 @@ export default function KaleidoColorLabPage() {
           style={{ transform: "rotate(-15deg)" }}
         />
         <div className="absolute bottom-1/4 right-1/4 text-6xl text-secondary/10">
-          ♥
+          {"♥︎"}
         </div>
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -598,7 +598,7 @@ export default function KaleidoColorLabPage() {
           ★
         </div>
         <div className="absolute bottom-8 left-12 text-6xl text-secondary/10 transform rotate-12">
-          ♥
+          {"♥︎"}
         </div>
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div
@@ -733,7 +733,7 @@ export default function KaleidoColorLabPage() {
                 </div>
                 <div>
                   <p className="text-foreground leading-relaxed">
-                    <span className="font-bold text-secondary">
+                    <span className="font-bold text-orange-500">
                       My Question:
                     </span>{" "}
                     All competitors claim greatness. Why would users notice us?
@@ -741,7 +741,7 @@ export default function KaleidoColorLabPage() {
                 </div>
                 <div>
                   <p className="text-foreground leading-relaxed">
-                    <span className="font-bold text-secondary">
+                    <span className="font-bold text-orange-500">
                       What I Wanted to Know:
                     </span>{" "}
                     In what scenario do users decide to purchase our product?
@@ -789,7 +789,7 @@ export default function KaleidoColorLabPage() {
               <div className="space-y-3 ml-11">
                 <p className="text-muted-foreground leading-relaxed">
                   1. Users see a color in the real world but
-                  <span className="text-secondary font-bold">
+                  <span className="text-orange-500 font-bold">
                     {" "}
                     don&apos;t know how to replicate and mix it
                   </span>
@@ -797,7 +797,7 @@ export default function KaleidoColorLabPage() {
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   2. Users{" "}
-                  <span className="text-secondary font-bold">
+                  <span className="text-orange-500 font-bold">
                     worry about wasting
                   </span>{" "}
                   money on paints that won&apos;t produce the color they want.
@@ -813,7 +813,7 @@ export default function KaleidoColorLabPage() {
               <h3 className="text-primary">My Ideation</h3>
             </div>
             <Image
-              src="/colorlab/Ideate.webp"
+              src="/colorlab/Ideate.jpg"
               alt="Ideation Sketches"
               width={1200}
               height={675}
@@ -963,7 +963,7 @@ export default function KaleidoColorLabPage() {
             </div>
             <p className="text-lg text-muted-foreground leading-relaxed ml-10 mb-8">
               I negotiated for{" "}
-              <span className="text-secondary font-bold">
+              <span className="text-orange-500 font-bold">
                 2 weeks to build a functional MVP with code
               </span>
               . Although it wouldn&apos;t be the final product, it would prove
@@ -1025,12 +1025,12 @@ export default function KaleidoColorLabPage() {
             style={{ transform: "rotate(0.3deg)" }}
           >
             <p className="text-foreground leading-relaxed text-lg">
-              <span className="font-bold text-secondary">
+              <span className="font-bold text-orange-500">
                 🎯 The Turning Point:
               </span>{" "}
               During the demo, I sampled the color of a dog and generated a
               real-time mixing recipe on my phone.{" "}
-              <span className="text-secondary font-bold">
+              <span className="text-orange-500 font-bold">
                 This tangible functionality was more persuasive than any deck
               </span>
               .
@@ -1184,7 +1184,7 @@ export default function KaleidoColorLabPage() {
           ★
         </div>
         <div className="absolute bottom-8 left-12 text-6xl text-secondary/10 transform rotate-12">
-          ♥
+          {"♥︎"}
         </div>
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div
@@ -1375,7 +1375,7 @@ export default function KaleidoColorLabPage() {
           ★
         </div>
         <div className="absolute bottom-20 left-20 text-6xl text-secondary/10">
-          ♥
+          {"♥︎"}
         </div>
 
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1621,7 +1621,7 @@ export default function KaleidoColorLabPage() {
           ★
         </div>
         <div className="absolute bottom-10 right-10 text-6xl text-primary/10">
-          ♥
+          {"♥︎"}
         </div>
 
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1685,7 +1685,7 @@ export default function KaleidoColorLabPage() {
           ★
         </div>
         <div className="absolute bottom-10 left-10 text-6xl text-secondary/10 transform rotate-12">
-          ♥
+          {"♥︎"}
         </div>
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
