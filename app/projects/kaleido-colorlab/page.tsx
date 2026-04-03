@@ -1611,6 +1611,209 @@ export default function KaleidoColorLabPage() {
       </section>
 
       {/* ════════════════════════════════════════════════════════
+          POST-BETA UX REFINEMENTS
+          ═══════════════════════════════════════════════════════ */}
+      <section id="ux-refinements" className="w-full py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <p
+              className="text-sm uppercase tracking-wider text-secondary mb-4"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              ── Post-Beta Improvements ──
+            </p>
+            <h2 className="text-primary mb-4 relative inline-block">
+              Post-Beta UX Refinements – From Feedback to Precision
+              <div
+                className="absolute -bottom-2 left-0 w-full h-1 bg-primary/30"
+                style={{ transform: "rotate(-1deg)" }}
+              />
+            </h2>
+          </div>
+
+          <div className="space-y-20">
+            {/* ── Refinement 1: Enlarged Color area + Sortable Swatches ── */}
+            <div className="space-y-6">
+              <h3 className="text-primary">
+                Enlarged Color area + Sortable Swatches
+              </h3>
+              <div className="space-y-3 text-muted-foreground leading-relaxed">
+                <p className="font-medium text-foreground">What I did:</p>
+                <ul className="list-disc list-inside space-y-2 ml-2">
+                  <li>
+                    Changed circular swatches to full card-top color blocks –
+                    larger area for better color perception.
+                  </li>
+                  <li>
+                    Added a sorting filter to help users quickly locate target
+                    colors.
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-secondary/10 border-l-4 border-secondary rounded-r-2xl p-4">
+                <p className="text-sm font-medium text-foreground">
+                  <span className="text-secondary">Impact: </span>Faster
+                  selection, improved color recognition confidence.
+                </p>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {(
+                  [
+                    {
+                      src: "/colorlab/color-card1.webp",
+                      alt: "Color card refinement 1",
+                    },
+                    {
+                      src: "/colorlab/color-card2.webp",
+                      alt: "Color card refinement 2",
+                    },
+                  ] as const
+                ).map(({ src, alt }) => (
+                  <div
+                    key={src}
+                    className="relative group cursor-zoom-in rounded-2xl overflow-hidden border-2 border-primary/10"
+                    onClick={() => setZoomedImage(src)}
+                  >
+                    <Image
+                      src={src}
+                      alt={alt}
+                      width={600}
+                      height={400}
+                      className="w-full h-auto"
+                    />
+                    <div className="absolute bottom-3 right-3 bg-white/85 backdrop-blur-sm rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity shadow-md">
+                      <Maximize2 className="w-4 h-4 text-foreground" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* ── Refinement 2: Hybrid Mix Controls ── */}
+            <div className="space-y-6">
+              <h3 className="text-primary">
+                Hybrid Mix Controls – Slider + Input + Stepper
+              </h3>
+              <div className="space-y-2 text-muted-foreground leading-relaxed">
+                <p>
+                  <span className="font-medium text-foreground">
+                    What I did:{" "}
+                  </span>
+                  Kept the slider for rough adjustments. Added a manual number
+                  input for exact values, plus (+) and (−) buttons for
+                  step‑by‑step fine‑tuning.
+                </p>
+              </div>
+              <div className="bg-secondary/10 border-l-4 border-secondary rounded-r-2xl p-4">
+                <p className="text-sm font-medium text-foreground">
+                  <span className="text-secondary">Impact: </span>Balances speed
+                  and precision; eliminates oversensitivity issues.
+                </p>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {(
+                  [
+                    {
+                      src: "/colorlab/color-mix1.webp",
+                      alt: "Color mix refinement 1",
+                    },
+                    {
+                      src: "/colorlab/color-mix2.webp",
+                      alt: "Color mix refinement 2",
+                    },
+                  ] as const
+                ).map(({ src, alt }) => (
+                  <div
+                    key={src}
+                    className="relative group cursor-zoom-in rounded-2xl overflow-hidden border-2 border-primary/10"
+                    onClick={() => setZoomedImage(src)}
+                  >
+                    <Image
+                      src={src}
+                      alt={alt}
+                      width={600}
+                      height={400}
+                      className="w-full h-auto"
+                    />
+                    <div className="absolute bottom-3 right-3 bg-white/85 backdrop-blur-sm rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity shadow-md">
+                      <Maximize2 className="w-4 h-4 text-foreground" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* ── Refinement 3: Always-On Magnifier ── */}
+            <div className="space-y-6">
+              <h3 className="text-primary">
+                Always-On Magnifier in Color Picker
+              </h3>
+              <div className="space-y-2 text-muted-foreground leading-relaxed">
+                <p>
+                  <span className="font-medium text-foreground">
+                    What I did:{" "}
+                  </span>
+                  Integrated a default magnifier into the color picker, allowing
+                  pixel‑perfect color sampling from any on‑screen element.
+                </p>
+              </div>
+              <div className="bg-secondary/10 border-l-4 border-secondary rounded-r-2xl p-4">
+                <p className="text-sm font-medium text-foreground">
+                  <span className="text-secondary">Impact: </span>No extra
+                  clicks – precise picking out of the box.
+                </p>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {(
+                  [
+                    {
+                      src: "/colorlab/color-picker1.webp",
+                      alt: "Color picker refinement 1",
+                    },
+                    {
+                      src: "/colorlab/color-picker2.webp",
+                      alt: "Color picker refinement 2",
+                    },
+                  ] as const
+                ).map(({ src, alt }) => (
+                  <div
+                    key={src}
+                    className="relative group cursor-zoom-in rounded-2xl overflow-hidden border-2 border-primary/10"
+                    onClick={() => setZoomedImage(src)}
+                  >
+                    <Image
+                      src={src}
+                      alt={alt}
+                      width={600}
+                      height={400}
+                      className="w-full h-auto"
+                    />
+                    <div className="absolute bottom-3 right-3 bg-white/85 backdrop-blur-sm rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity shadow-md">
+                      <Maximize2 className="w-4 h-4 text-foreground" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* User-Centered callout */}
+          <div className="mt-16 bg-primary/5 border-l-4 border-primary rounded-r-2xl p-6">
+            <span
+              className="inline-block text-xs bg-primary text-primary-foreground px-3 py-1 rounded-full mb-3"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              User-Centered
+            </span>
+            <p className="text-lg text-foreground leading-relaxed font-bold">
+              Real user feedback made these improvements possible. We listened,
+              iterated, and delivered a more intuitive color experience.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════
           SECTION 7: REFLECTIONS
           ═══════════════════════════════════════════════════════ */}
       <section
